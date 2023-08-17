@@ -1,0 +1,60 @@
+<!ELEMENT ecosystem (styles?, dependencies?, body?)>
+<!ATTLIST ecosystem root-namespace CDATA #IMPLIED>
+<!ELEMENT styles ((link|style)*)>
+<!ATTLIST styles
+common-style-path CDATA #IMPLIED
+>
+<!ELEMENT link EMPTY>
+<!ATTLIST link
+href CDATA #IMPLIED
+>
+<!ELEMENT style ANY>
+<!ATTLIST style
+type CDATA #IMPLIED
+>
+<!ELEMENT dependencies (script*)>
+<!ATTLIST dependencies
+common-dependencies-path CDATA #IMPLIED
+>
+<!ELEMENT script ANY>
+<!ATTLIST script
+src CDATA #IMPLIED
+type CDATA #IMPLIED
+crossorigin (anonymous|use-credentials) "anonymous"
+>
+<!ELEMENT body (hidden-header?,(header-root|static-header)?,root,(footer-root|static-footer)?,hidden-footer?)>
+<!ATTLIST body
+class CDATA #IMPLIED
+style CDATA #IMPLIED
+>
+<!ELEMENT hidden-header ANY>
+<!ELEMENT static-header ANY>
+<!ELEMENT header-root (component-property*)>
+<!ATTLIST header-root
+id CDATA #REQUIRED
+class CDATA #IMPLIED
+style CDATA #IMPLIED
+component-namespace CDATA #REQUIRED
+component-alias CDATA #REQUIRED
+>
+<!ELEMENT root EMPTY>
+<!ATTLIST root
+id CDATA #REQUIRED
+class CDATA #IMPLIED
+style CDATA #IMPLIED
+>
+<!ELEMENT footer-root (component-property*)>
+<!ATTLIST footer-root
+id CDATA #REQUIRED
+class CDATA #IMPLIED
+style CDATA #IMPLIED
+component-namespace CDATA #REQUIRED
+component-alias CDATA #REQUIRED
+>
+<!ELEMENT component-property EMPTY>
+<!ATTLIST component-property
+name CDATA #REQUIRED
+value CDATA #REQUIRED
+>
+<!ELEMENT static-footer ANY>
+<!ELEMENT hidden-footer ANY>

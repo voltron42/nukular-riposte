@@ -1,0 +1,25 @@
+<?xml version="1.0"?>
+<!DOCTYPE ecosystem SYSTEM "eco.dtd">
+<ecosystem root-namespace="">
+    <styles common-style-path="">
+        <link href=""/>
+        <style type="text/css">
+        </style>
+    </styles>
+    <dependencies common-dependencies-path="">
+        <script type="text/javascript" src=""></script>
+        <script type="text/javascript">
+        </script>
+    </dependencies>
+    <body>
+        <hidden-header></hidden-header>
+        <header-root id="" component-namespace="" component-alias="">
+            <component-property name="" value="" />
+        </header-root>
+        <root id=""/>
+        <footer-root id="" component-namespace="" component-alias="">
+            <component-property name="" value="" />
+        </footer-root>
+        <hidden-footer></hidden-footer>
+    </body>
+</ecosystem>
