@@ -7,7 +7,18 @@ import typer
 
 from NukularRiposte import __app_name__, __version__
 
+from NukularRiposte.buildType import BuildType
+
 app = typer.Typer()
+
+def _parse_buildType(name: str) -> BuildType:
+    return BuildType[name]
+
+@app.command()
+def new(
+        type: BuildType = typer.Argument(callback=_parse_buildType, default=BuildType.Namespace)
+) -> None:
+    return
 
 def _version_callback(value: bool) -> None:
     if value:
